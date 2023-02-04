@@ -1,3 +1,7 @@
+<script>
+    import Switch from "../components/Switch.svelte";
+</script>
+
 <h1>Welcome to SvelteKit</h1>
 <h2>Welcome to SvelteKit</h2>
 <h3>Welcome to SvelteKit</h3>
@@ -19,10 +23,17 @@
     <button class="button primary-btn">primary</button>
     <button class="button secondary-btn">secondary</button>
 </div>
+<div class="blue">
+    <Switch />
+</div>
 
 <style lang="scss">
     .dark {
         padding: 4px 0;
         background-color: $midnight;
+    }
+    .blue {
+        background-color: $violet;
+
     }
 </style>
