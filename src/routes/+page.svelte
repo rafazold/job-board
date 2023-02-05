@@ -4,20 +4,66 @@
     import JobCard from '../components/JobCard.svelte';
 
     export let data;
+
+    let titleFilter = '';
+    let locationFilter = '';
+    let isFullTimeFilter = false;
+    const fullTime = 'Full Time';
+
+    const start = 0;
+    let items = data?.jobs || [];
+    let cardsPerRequest = 5;
+    let currentItem = 0;
+
+    $: end = Math.min(currentItem + cardsPerRequest, items.length);
+    $: jobs = items.slice(start, end) || [];
+
+    function filterResults(title, location, isFullTime) {
+        items = [];
+        currentItem = 0;
+        if (!title && !location && !isFullTime) {
+            items = data.jobs;
+            return;
+        }
+        items = data.jobs.filter((job) => {
+            const hasTitle =
+                title &&
+                job.position.toLowerCase().includes(title.toLowerCase());
+            const hasLocation =
+                location &&
+                job.location.toLowerCase().includes(location.toLowerCase());
+            const hasFullTime = isFullTime && job.contract === fullTime;
+            return hasTitle || hasLocation || hasFullTime;
+        });
+    }
+
+    function showMoreItems() {
+        currentItem = currentItem + 5;
+    }
 </script>
 
 <div class="container" class:dark={$isDarkMode}>
     <div class="filters-wrapper">
-        <Filters />
+        <Filters
+            bind:title={titleFilter}
+            bind:location={locationFilter}
+            bind:isFullTime={isFullTimeFilter}
+            on:SEARCH={() => {
+                filterResults(titleFilter, locationFilter, isFullTimeFilter);
+            }}
+        />
     </div>
     <div class="jobs">
-        {#if data?.jobs?.length > 0}
-            {#each data.jobs as job (job.id)}
+        {#if jobs?.length > 0}
+            {#each jobs as job (job.id)}
                 <div class="job-card-wrapper">
                     <JobCard {job} />
                 </div>
             {/each}
         {/if}
+    </div>
+    <div class="button-row">
+        <button class="button" on:click={showMoreItems}>Load More</button>
     </div>
 </div>
 
@@ -32,6 +78,11 @@
             left: 1.5rem;
             height: 5rem;
             margin-top: -2.5rem;
+        }
+        .button-row {
+            width: 100%;
+            text-align: center;
+            margin: 2rem auto;
         }
         @media (min-width: $screen-medium) {
             width: 100%;
@@ -52,6 +103,9 @@
                     width: 48%;
                     max-width: 350px;
                 }
+            }
+            .button-row {
+                margin: 3.5rem auto;
             }
         }
         @media (min-width: $screen-large) {

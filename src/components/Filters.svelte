@@ -1,15 +1,22 @@
 <script>
     import { filterIcon, searchIcon } from '../helpers';
     import Modal from './Modal.svelte';
-    let title = '';
-    let location = '';
-    let isFullTime = false;
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
+    export let title = '';
+    export let location = '';
+    export let isFullTime = false;
     let showFilterModal = false;
 
-    function search() {}
+    function handleSearch() {
+        dispatch('SEARCH');
+        showFilterModal = false;
+    }
 </script>
 
-<form class="filters" on:submit|preventDefault={search}>
+<form class="filters" on:submit|preventDefault={handleSearch}>
     <div class="title-wrapper">
         <input
             class="custom-input filter-title"
@@ -39,13 +46,13 @@
                 type="checkbox"
                 id="full-time"
                 name="full-time"
-                bind:value={isFullTime}
-                checked
+                bind:checked={isFullTime}
             />
             <span>Full Time</span>
         </label>
     </div>
     <button
+        type="button"
         class="filter-button small-only"
         on:click|preventDefault={() => {
             showFilterModal = true;
@@ -82,12 +89,11 @@
                     type="checkbox"
                     id="full-time-modal"
                     name="full-time-modal"
-                    bind:value={isFullTime}
-                    checked
+                    bind:checked={isFullTime}
                 />
                 <span>Full Time Only</span>
             </label>
-            <button class="button modal-submit">
+            <button class="button modal-submit" on:click={handleSearch}>
                 <span class="search">search</span>
             </button>
         </div>
