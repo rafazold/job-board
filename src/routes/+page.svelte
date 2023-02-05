@@ -86,23 +86,20 @@
         }
         @media (min-width: $screen-medium) {
             width: 100%;
-            max-width: 750px;
+            max-width: 80%;
             margin: 0 auto;
+            padding: 2.5rem 0;
             .filters-wrapper {
                 width: 100%;
-                max-width: 750px;
+                //max-width: 750px;
                 right: auto;
                 left: 50%;
                 transform: translateX(-50%);
             }
             .jobs {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                .job-card-wrapper {
-                    width: 48%;
-                    max-width: 350px;
-                }
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.875rem;
             }
             .button-row {
                 margin: 3.5rem auto;
@@ -113,8 +110,8 @@
             .filters-wrapper {
                 max-width: 1200px;
             }
-            .job-card-wrapper {
-                width: 30%;
+            .jobs {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     }
