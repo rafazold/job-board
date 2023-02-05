@@ -1,9 +1,9 @@
 <script>
     import Header from '../components/Header.svelte';
-    let isDark = false;
+    import { isDarkMode } from '../store/store';
 </script>
 
-<div class="container" class:dark={isDark}>
+<div class="container" class:dark={$isDarkMode}>
     <Header />
     <main>
         <slot />
