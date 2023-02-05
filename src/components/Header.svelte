@@ -1,6 +1,5 @@
 <script>
     import Switch from './Switch.svelte';
-    import Modal from './Modal.svelte';
     import { isDarkMode } from '../store/store';
     import { onMount } from 'svelte';
 

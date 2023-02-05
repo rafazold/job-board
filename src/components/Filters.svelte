@@ -51,7 +51,7 @@
             showFilterModal = true;
         }}
     >
-        <span class="filter">
+        <span class="filter-icon">
             {@html filterIcon}
         </span>
     </button>
@@ -122,9 +122,13 @@
                 display: block;
             }
         }
-        .filter {
+        .filter-icon {
             margin: auto;
             display: flex;
+            cursor: pointer;
+            &:hover {
+                color: $gray;
+            }
         }
     }
     .title-wrapper,
@@ -140,7 +144,7 @@
         background-color: $white;
         width: 327px;
         .location-wrapper {
-            border-bottom: solid $light-gray;
+            border-bottom: solid 0.5px $light-gray;
             padding: 0.75rem 1.5rem;
             .filter-location {
                 padding-left: 2rem;
@@ -165,10 +169,13 @@
             }
         }
     }
-    .dark {
+    :global(.dark) {
         .filters,
         .filter-box {
             background-color: $very-dark-blue;
+        }
+        .filter-icon {
+            color: $white;
         }
     }
     @media (min-width: $screen-medium) {
@@ -208,10 +215,15 @@
             }
         }
     }
-    :global(.dark .filters) {
-        background-color: $very-dark-blue !important;
-        .filter-title {
-            color: $white;
+    :global(.dark) {
+        .filters {
+            background-color: $very-dark-blue !important;
+            .filter-title {
+                color: $white;
+            }
+        }
+        .filter-box {
+            background-color: $very-dark-blue;
         }
     }
 </style>
