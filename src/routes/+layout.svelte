@@ -3,7 +3,7 @@
     import { isDarkMode } from '../store/store';
 </script>
 
-<div class="container" class:dark={$isDarkMode}>
+<div class="main-wrapper" class:dark={$isDarkMode}>
     <Header />
     <main>
         <slot />
@@ -12,7 +12,7 @@
 
 <style lang="scss">
     @import '../style/app';
-    .container {
+    .main-wrapper {
         background-color: $light-gray;
         &.dark {
             background-color: $midnight;
