@@ -9,7 +9,6 @@
         background-color: $light-gray;
         appearance: none;
         border-radius: 3px;
-
         &:hover {
             background-color: $light-violet;
         }
@@ -19,14 +18,55 @@
         }
     }
 
-    line-height: 24px;
+    line-height: 1.5rem;
     vertical-align: center;
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .custom-input {
+    border: none;
+    line-height: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    color: $very-dark-blue;
+    background-color: transparent;
+    &::placeholder {
+        color: $very-dark-blue;
+        opacity: 0.5;
+    }
+
+    &:-ms-input-placeholder {
+        color: $very-dark-blue;
+        opacity: 0.5;
+    }
+
+    &::-ms-input-placeholder {
+        color: $very-dark-blue;
+        opacity: 0.5;
+    }
+}
+.dark {
+    .custom-input {
+        color: $white;
+        &::placeholder {
+            color: $white;
+            opacity: 0.5;
+        }
+
+        &:-ms-input-placeholder {
+            color: $white;
+            opacity: 0.5;
+        }
+
+        &::-ms-input-placeholder {
+            color: $white;
+            opacity: 0.5;
+        }
+    }
 }
 
 //buttons

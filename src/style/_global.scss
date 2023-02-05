@@ -2,6 +2,7 @@
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 16px;
     line-height: 26px;
+    margin: 0;
 }
 
 :global(h1) {
@@ -30,4 +31,15 @@
 
 :global(button) {
     all: unset;
+}
+
+:global(.large-only) {
+    @media (max-width: $screen-medium) {
+        display: none !important;
+    }
+}
+:global(.small-only) {
+    @media (min-width: $screen-medium) {
+        display: none !important;
+    }
 }
