@@ -9,12 +9,14 @@
     font-size: 1.75rem;
     font-weight: 700;
     line-height: 2.125rem;
+    margin: 0;
 }
 
 :global(h2) {
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.8125rem;
+    margin: 0;
 }
 
 :global(h3) {
@@ -31,6 +33,10 @@
 
 :global(button) {
     all: unset;
+}
+
+:global(a) {
+    text-decoration: none;
 }
 
 :global(.large-only) {

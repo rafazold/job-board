@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/kit/vite';
 import preprocess from 'svelte-preprocess';
 
 export default {
@@ -8,6 +7,7 @@ export default {
             fallback: '200.html',
         }),
     },
+    prerender: { entries: ['/job/1'] },
     preprocess: preprocess({
         scss: {
             prependData: `@import './src/style/app.scss';`,

@@ -89,9 +89,7 @@
     &:hover {
         background-color: $light-violet;
     }
-    &.primary-btn {
-    }
-    &.secondary-btn {
+    &.secondary {
         background-color: rgb(89, 100, 224, 0.1);
         color: $violet;
         &:hover {
@@ -101,7 +99,7 @@
 }
 
 :global(.dark) {
-    .secondary-btn {
+    .secondary {
         color: $white;
         background-color: rgba(255, 255, 255, 0.1);
         &:hover {

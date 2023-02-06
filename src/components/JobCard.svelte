@@ -1,26 +1,38 @@
 <script>
     export let job;
+    export let isInternal = false;
 </script>
 
-<div class="job-card">
-    <div class="card-content">
-        <div class="card-logo" style="background-color: {job.logoBackground}">
-            <img src={job.logo} alt={job.company} />
-        </div>
+<div class="job-card" class:internal={isInternal}>
+    <div class="card-content" class:internal={isInternal}>
+        {#if !isInternal}
+            <div
+                class="card-logo"
+                style="background-color: {job.logoBackground}"
+            >
+                <img src={job.logo} alt={job.company} />
+            </div>
+        {/if}
         <h4 class="basic-details">
             <span>{job.postedAt}</span>
             <span>.</span>
             <span>{job.contract}</span>
         </h4>
         <h3 class="job-name">{job.position}</h3>
-        <h4 class="company">{job.company}</h4>
+        {#if !isInternal}
+            <h4 class="company">{job.company}</h4>
+        {/if}
         <p class="job-location">{job.location}</p>
     </div>
 </div>
 
 <style lang="scss">
     .job-card {
+        display: block;
         margin-top: 3.5rem;
+        &.internal {
+            margin-top: 0;
+        }
     }
     .card-content {
         margin-top: 1.5625rem;
@@ -51,10 +63,24 @@
         .job-location {
             color: $violet;
             margin-top: 2rem;
+            font-weight: bold;
+        }
+        &.internal {
+            background-color: transparent;
+            margin-top: 0;
+            padding: 0;
+            h4,
+            h3,
+            p {
+                margin: 0;
+            }
         }
     }
     :global(.dark .card-content) {
         background-color: $very-dark-blue !important;
+        &.internal {
+            background-color: transparent !important;
+        }
         .job-name {
             color: $white;
         }

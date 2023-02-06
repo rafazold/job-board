@@ -56,9 +56,9 @@
     <div class="jobs">
         {#if jobs?.length > 0}
             {#each jobs as job (job.id)}
-                <div class="job-card-wrapper">
+                <a class="job-card-wrapper" href="/job/{job.id}">
                     <JobCard {job} />
-                </div>
+                </a>
             {/each}
         {/if}
     </div>
