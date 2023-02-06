@@ -13,6 +13,7 @@
 <style lang="scss">
     @import '../style/app';
     .main-wrapper {
+        height: 100%;
         background-color: $light-gray;
         &.dark {
             background-color: $midnight;

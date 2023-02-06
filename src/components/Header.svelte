@@ -73,10 +73,11 @@
 
         @media (min-width: $screen-medium) {
             .header-background {
-                background: no-repeat left/cover
+                background: no-repeat left bottom/cover
                     url('/assets/desktop/bg-pattern-header.svg');
                 width: 100%;
                 aspect-ratio: 4.8;
+                max-height: 12rem;
             }
         }
         @media (min-width: $screen-large) {

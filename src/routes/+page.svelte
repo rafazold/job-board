@@ -106,12 +106,14 @@
             }
         }
         @media (min-width: $screen-large) {
+            .jobs {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 1400px) {
             max-width: 1200px;
             .filters-wrapper {
                 max-width: 1200px;
-            }
-            .jobs {
-                grid-template-columns: repeat(3, 1fr);
             }
         }
     }
