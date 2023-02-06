@@ -86,7 +86,7 @@
         }
         @media (min-width: $screen-medium) {
             width: 100%;
-            max-width: 80%;
+            max-width: 700px;
             margin: 0 auto;
             padding: 2.5rem 0;
             .filters-wrapper {
@@ -97,16 +97,20 @@
                 transform: translateX(-50%);
             }
             .jobs {
+                margin-top: 0.875rem;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.875rem;
+                gap: 0.75rem;
             }
             .button-row {
                 margin: 3.5rem auto;
             }
         }
         @media (min-width: $screen-large) {
+            max-width: 80%;
             .jobs {
+                margin-top: 1.5rem;
+                gap: 1.875rem;
                 grid-template-columns: repeat(3, 1fr);
             }
         }

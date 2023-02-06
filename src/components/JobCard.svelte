@@ -15,7 +15,7 @@
         {/if}
         <h4 class="basic-details">
             <span>{job.postedAt}</span>
-            <span>.</span>
+            <span class="dot">.</span>
             <span>{job.contract}</span>
         </h4>
         <h3 class="job-name">{job.position}</h3>
@@ -30,6 +30,13 @@
     .job-card {
         display: block;
         margin-top: 3.5rem;
+        &:not(.internal) {
+            :hover {
+                .job-name {
+                    color: $dark-gray;
+                }
+            }
+        }
         &.internal {
             margin-top: 0;
         }
@@ -44,6 +51,11 @@
         .basic-details,
         .company {
             font-weight: normal;
+            font-size: 1rem;
+            .dot {
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
         }
         .job-name {
             color: $very-dark-blue;
@@ -64,6 +76,12 @@
             color: $violet;
             margin-top: 2rem;
             font-weight: bold;
+            font-size: 0.875rem;
+        }
+        @media (min-width: $screen-medium) {
+            .job-location {
+                margin-bottom: 0;
+            }
         }
         &.internal {
             background-color: transparent;

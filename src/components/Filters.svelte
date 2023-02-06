@@ -48,7 +48,7 @@
                 name="full-time"
                 bind:checked={isFullTime}
             />
-            <span>Full Time</span>
+            <span>Full Time <span class="desktop-only">Only</span></span>
         </label>
     </div>
     <button
@@ -150,7 +150,7 @@
         background-color: $white;
         width: 327px;
         .location-wrapper {
-            border-bottom: solid 0.5px $light-gray;
+            border-bottom: solid 1px rgba(110, 128, 152, 0.2);
             padding: 0.75rem 1.5rem;
             .filter-location {
                 padding-left: 2rem;
@@ -205,19 +205,43 @@
                 flex-grow: 1;
             }
             .fulltime-wrapper {
-                padding: 0 1.5rem;
+                padding: 0 1.25rem;
+                label {
+                    white-space: nowrap;
+                }
             }
             .filter-title,
             .filter-location {
                 padding-left: 3rem;
                 position: relative;
-                border-right: solid $light-gray;
+                border-right: solid rgba(110, 128, 152, 0.2);
             }
             .button {
                 .search {
                     width: auto;
                     height: auto;
                 }
+            }
+        }
+    }
+    @media (min-width: $screen-large) {
+        .filters {
+            .title-wrapper,
+            .location-wrapper {
+                .input-icon {
+                }
+            }
+            .title-wrapper {
+            }
+            .fulltime-wrapper {
+                label {
+                }
+            }
+            .filter-title,
+            .filter-location {
+            }
+            .button {
+                padding: 0.75rem 2rem;
             }
         }
     }

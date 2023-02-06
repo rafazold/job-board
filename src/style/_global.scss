@@ -45,6 +45,11 @@
         display: none !important;
     }
 }
+:global(.desktop-only) {
+    @media (max-width: $screen-large) {
+        display: none !important;
+    }
+}
 :global(.small-only) {
     @media (min-width: $screen-medium) {
         display: none !important;

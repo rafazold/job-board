@@ -9,6 +9,7 @@
         background-color: rgba(25, 32, 45, 0.1);
         appearance: none;
         border-radius: 3px;
+        flex-shrink: 0;
         &:hover {
             background-color: $light-violet;
         }
@@ -34,6 +35,9 @@
     padding: 0 1rem;
     color: $very-dark-blue;
     background-color: transparent;
+    font-size: 1rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    caret-color: $violet;
     &::placeholder {
         color: $very-dark-blue;
         opacity: 0.5;
@@ -83,7 +87,7 @@
     border-radius: 5px;
     cursor: pointer;
     background-color: $violet;
-    padding: 1rem 2.5rem;
+    padding: 0.75rem 2.5rem;
     color: $white;
     font-weight: bold;
     &:hover {

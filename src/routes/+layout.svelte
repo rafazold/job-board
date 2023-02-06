@@ -14,6 +14,7 @@
     @import '../style/app';
     .main-wrapper {
         height: 100%;
+        overflow: auto;
         background-color: $light-gray;
         &.dark {
             background-color: $midnight;
