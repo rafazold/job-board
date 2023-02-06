@@ -26,7 +26,7 @@
         </div>
     </header>
     <section class="content">
-        <div>
+        <div class="content-header">
             <JobCard {job} isInternal />
             <a href={job.apply} class="button apply">Apply now</a>
         </div>
@@ -112,6 +112,7 @@
             .role {
                 color: $very-dark-blue;
                 margin: 2.5rem 0 1.5rem;
+                font-size: 1.25rem;
             }
             .requirements-items,
             .role-items {
@@ -142,6 +143,69 @@
                 text-align: center;
             }
         }
+        @media (min-width: $screen-medium) {
+            .job-header {
+                .header-container {
+                    display: flex;
+                    margin: 0;
+                    width: 100%;
+                    align-items: center;
+                    .company-logo {
+                        position: static;
+                        transform: none;
+                        width: 8.75rem;
+                        height: 8.75rem;
+                        border-radius: 0;
+                        img {
+                            width: 4.5rem;
+                        }
+                    }
+                    .company-details {
+                        text-align: left;
+                        margin-left: 2.5rem;
+                        flex-grow: 1;
+                        padding: 0;
+                        .company-website {
+                            margin: 0.5rem 0 0;
+                        }
+                    }
+                    .company-link-wrapper {
+                        margin-right: 2.5rem;
+                    }
+                }
+            }
+            .content {
+                .content-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .button {
+                        &.apply {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.5rem;
+                .footer-position {
+                    font-size: 1.25rem;
+                }
+                .footer-company {
+                    font-size: 1rem;
+                    margin: 0.5rem 0 0;
+                    color: $dark-gray;
+                    font-weight: normal;
+                }
+            }
+        }
+        @media (min-width: $screen-large) {
+            max-width: 730px;
+            margin: 0 auto;
+        }
     }
     :global(.dark) {
         .container {
@@ -151,10 +215,6 @@
                     .company-name {
                         color: $white;
                     }
-                }
-                .company-link {
-                    background-color: rgba(89, 100, 224, 0.1);
-                    color: $violet;
                 }
             }
             .content {
@@ -166,6 +226,12 @@
             }
             .footer {
                 background-color: $very-dark-blue;
+                .footer-position {
+                    color: $white;
+                }
+                .footer-company {
+                    color: $dark-gray;
+                }
             }
         }
     }

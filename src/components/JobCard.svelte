@@ -74,6 +74,20 @@
             p {
                 margin: 0;
             }
+            .job-name {
+                margin: 0.5rem 0;
+            }
+            .basic-details {
+                font-size: 1rem;
+            }
+            .job-location {
+                font-size: 0.875rem;
+            }
+            @media (min-width: $screen-medium) {
+                .job-name {
+                    font-size: 1.75rem;
+                }
+            }
         }
     }
     :global(.dark .card-content) {
