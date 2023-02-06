@@ -12,7 +12,7 @@
 
     const start = 0;
     let items = data?.jobs || [];
-    let cardsPerRequest = 5;
+    let cardsPerRequest = 6;
     let currentItem = 0;
 
     $: end = Math.min(currentItem + cardsPerRequest, items.length);
@@ -38,7 +38,7 @@
     }
 
     function showMoreItems() {
-        currentItem = currentItem + 5;
+        currentItem = currentItem + cardsPerRequest;
     }
 </script>
 

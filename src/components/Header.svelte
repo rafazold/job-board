@@ -17,11 +17,15 @@
         <div class="header-content">
             <h1 class="title">devjobs</h1>
             <div class="switch-wrapper">
-                <img class="left" src="assets/desktop/icon-sun.svg" alt="sun" />
+                <img
+                    class="left"
+                    src="/assets/desktop/icon-sun.svg"
+                    alt="sun"
+                />
                 <Switch bind:checked={$isDarkMode} />
                 <img
                     class="right"
-                    src="assets/desktop/icon-moon.svg"
+                    src="/assets/desktop/icon-moon.svg"
                     alt="moon"
                 />
             </div>
@@ -35,7 +39,7 @@
 
         .header-background {
             background: no-repeat center/cover
-                url('assets/mobile/bg-pattern-header.svg');
+                url('/assets/mobile/bg-pattern-header.svg');
             width: 100%;
             aspect-ratio: 2.76;
 
@@ -50,7 +54,7 @@
                 color: transparent;
                 margin: 0;
                 background: no-repeat left/contain
-                    url('assets/desktop/logo.svg');
+                    url('/assets/desktop/logo.svg');
             }
 
             .switch-wrapper {
@@ -70,7 +74,7 @@
         @media (min-width: $screen-medium) {
             .header-background {
                 background: no-repeat left/cover
-                    url('assets/desktop/bg-pattern-header.svg');
+                    url('/assets/desktop/bg-pattern-header.svg');
                 width: 100%;
                 aspect-ratio: 4.8;
             }
