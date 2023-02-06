@@ -7,7 +7,7 @@ export default {
             fallback: '200.html',
         }),
     },
-    prerender: { entries: ['/job/1'] },
+    prerender: { entries: ['*'] },
     preprocess: preprocess({
         scss: {
             prependData: `@import './src/style/app.scss';`,
