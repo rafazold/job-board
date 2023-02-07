@@ -22,7 +22,7 @@
             class="custom-input filter-title"
             type="text"
             bind:value={title}
-            placeholder="Filter by title..."
+            placeholder="Filter by title, companies, expertise..."
         />
         <span class="input-icon large-only">
             {@html searchIcon}
@@ -63,7 +63,7 @@
         </span>
     </button>
     <button class="button" type="submit">
-        <span class="large-only search">search</span>
+        <span class="large-only search">Search</span>
         <span class="small-only search">
             {@html searchIcon}
         </span>
@@ -94,7 +94,7 @@
                 <span>Full Time Only</span>
             </label>
             <button class="button modal-submit" on:click={handleSearch}>
-                <span class="search">search</span>
+                <span class="search">Search</span>
             </button>
         </div>
     </div>
@@ -150,7 +150,7 @@
         background-color: $white;
         width: 327px;
         .location-wrapper {
-            border-bottom: solid 1px rgba(110, 128, 152, 0.2);
+            border-bottom: solid 0.5px rgba(110, 128, 152, 0.2);
             padding: 0.75rem 1.5rem;
             .filter-location {
                 padding-left: 2rem;
@@ -226,20 +226,6 @@
     }
     @media (min-width: $screen-large) {
         .filters {
-            .title-wrapper,
-            .location-wrapper {
-                .input-icon {
-                }
-            }
-            .title-wrapper {
-            }
-            .fulltime-wrapper {
-                label {
-                }
-            }
-            .filter-title,
-            .filter-location {
-            }
             .button {
                 padding: 0.75rem 2rem;
             }

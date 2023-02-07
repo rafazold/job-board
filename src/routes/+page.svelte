@@ -12,14 +12,14 @@
     const start = 0;
     let items = data?.jobs || [];
     let cardsPerRequest = 6;
-    let currentItem = 0;
+    let currentGroup = 0;
 
-    $: end = Math.min(currentItem + cardsPerRequest, items.length);
+    $: end = Math.min(currentGroup + cardsPerRequest, items.length);
     $: jobs = items.slice(start, end) || [];
-
+    $: allItemsFetched = end >= items.length;
     function filterResults(title, location, isFullTime) {
         items = [];
-        currentItem = 0;
+        currentGroup = 0;
         if (!title && !location && !isFullTime) {
             items = data.jobs;
             return;
@@ -37,7 +37,8 @@
     }
 
     function showMoreItems() {
-        currentItem = currentItem + cardsPerRequest;
+        if (allItemsFetched) return;
+        currentGroup = currentGroup + cardsPerRequest;
     }
 </script>
 
@@ -62,7 +63,9 @@
         {/if}
     </div>
     <div class="button-row">
-        <button class="button" on:click={showMoreItems}>Load More</button>
+        {#if !allItemsFetched}
+            <button class="button" on:click={showMoreItems}>Load More</button>
+        {/if}
     </div>
 </div>
 
@@ -77,6 +80,12 @@
             left: 1.5rem;
             height: 5rem;
             margin-top: -2.5rem;
+        }
+        .jobs {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
         }
         .button-row {
             width: 100%;
@@ -96,10 +105,12 @@
                 transform: translateX(-50%);
             }
             .jobs {
-                margin-top: 0.875rem;
-                display: grid;
+                margin-top: 2.8125rem;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem;
+                gap: 2.5rem 0.75rem;
+                .job-card-wrapper {
+                    margin-top: 0;
+                }
             }
             .button-row {
                 margin: 3.5rem auto;
@@ -108,8 +119,8 @@
         @media (min-width: $screen-large) {
             max-width: 80%;
             .jobs {
-                margin-top: 1.5rem;
-                gap: 1.875rem;
+                margin-top: 5rem;
+                gap: 2.5rem 1.875rem;
                 grid-template-columns: repeat(3, 1fr);
             }
         }

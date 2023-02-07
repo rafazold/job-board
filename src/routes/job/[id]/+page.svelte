@@ -67,7 +67,7 @@
             .job-header {
                 background-color: $white;
                 border-radius: 6px;
-                margin-top: -2.75rem;
+                margin-top: -3rem;
                 position: relative;
                 .header-container {
                     margin-top: 1.5625rem;
@@ -98,6 +98,7 @@
                         padding: 0.5rem 0 2rem;
                         .company-link {
                             display: inline-block;
+                            padding: 0.75rem 1.25rem;
                         }
                     }
                 }
@@ -153,6 +154,7 @@
             .container {
                 padding: 0 2.5rem;
                 .job-header {
+                    margin-top: -2.5rem;
                     .header-container {
                         display: flex;
                         margin: 0;
@@ -178,6 +180,7 @@
                             }
                         }
                         .company-link-wrapper {
+                            padding: 0;
                             margin-right: 2.5rem;
                         }
                     }
@@ -206,7 +209,7 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 1.5rem;
+                    padding: 0 1.5rem;
                     .footer-position {
                         font-size: 1.25rem;
                     }

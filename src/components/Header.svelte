@@ -47,7 +47,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 2rem 1.5rem 0;
+                padding: 2.5rem 1.5rem 0;
             }
 
             .title {
@@ -83,19 +83,19 @@
                     margin: 0 auto;
                 }
             }
-            @media (min-width: $screen-large) {
-                .header-background {
-                    .header-content {
-                        max-width: 80%;
-                    }
+        }
+        @media (min-width: $screen-large) {
+            .header-background {
+                .header-content {
+                    max-width: 80%;
                 }
-                aspect-ratio: 8.8;
             }
-            @media (min-width: 1400px) {
-                .header-background {
-                    .header-content {
-                        max-width: 1200px;
-                    }
+        }
+        @media (min-width: 1400px) {
+            .header-background {
+                aspect-ratio: 8.8;
+                .header-content {
+                    max-width: 1200px;
                 }
             }
         }

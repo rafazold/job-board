@@ -28,7 +28,7 @@ A front end app that displays a jobs board and offers the following features:
 ### Links
 
 - Solution URL: [https://github.com/rafazold/job-board](https://github.com/rafazold/job-board)
-- Live Site URL: [https://master--rafa-jobs-board.netlify.app/](https://master--rafa-jobs-board.netlify.app/)
+- Live Site URL: [https://rafa-jobs-board.netlify.app/](https://rafa-jobs-board.netlify.app/)
 
 ## My process
 

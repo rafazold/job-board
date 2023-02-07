@@ -29,7 +29,6 @@
 <style lang="scss">
     .job-card {
         display: block;
-        margin-top: 3.5rem;
         &:not(.internal) {
             :hover {
                 .job-name {
@@ -44,7 +43,7 @@
     .card-content {
         margin-top: 1.5625rem;
         position: relative;
-        padding: 2rem;
+        padding: 1rem 2rem;
         background-color: $white;
         color: $dark-gray;
         border-radius: 6px;
