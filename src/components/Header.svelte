@@ -78,11 +78,25 @@
                 width: 100%;
                 aspect-ratio: 4.8;
                 max-height: 12rem;
+                .header-content {
+                    max-width: 700px;
+                    margin: 0 auto;
+                }
             }
-        }
-        @media (min-width: $screen-large) {
-            .header-background {
+            @media (min-width: $screen-large) {
+                .header-background {
+                    .header-content {
+                        max-width: 80%;
+                    }
+                }
                 aspect-ratio: 8.8;
+            }
+            @media (min-width: 1400px) {
+                .header-background {
+                    .header-content {
+                        max-width: 1200px;
+                    }
+                }
             }
         }
     }

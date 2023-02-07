@@ -4,10 +4,10 @@ import preprocess from 'svelte-preprocess';
 export default {
     kit: {
         adapter: adapter({
-            fallback: '200.html',
+            fallback: 'index.html',
         }),
     },
-    prerender: { entries: ['*'] },
+    prerender: { entries: ['*'], default: true },
     preprocess: preprocess({
         scss: {
             prependData: `@import './src/style/app.scss';`,
