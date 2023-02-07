@@ -1,6 +1,5 @@
 <script>
     import Filters from '../components/Filters.svelte';
-    import { isDarkMode } from '../store/store';
     import JobCard from '../components/JobCard.svelte';
 
     export let data;
@@ -42,7 +41,7 @@
     }
 </script>
 
-<div class="container" class:dark={$isDarkMode}>
+<div class="container">
     <div class="filters-wrapper">
         <Filters
             bind:title={titleFilter}

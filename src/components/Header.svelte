@@ -12,7 +12,7 @@
     });
 </script>
 
-<header class="header" class:dark={$isDarkMode}>
+<header class="header">
     <div class="header-background">
         <div class="header-content">
             <h1 class="title">devjobs</h1>

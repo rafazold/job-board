@@ -90,14 +90,20 @@
     padding: 0.75rem 2.5rem;
     color: $white;
     font-weight: bold;
-    &:hover {
-        background-color: $light-violet;
-    }
     &.secondary {
         background-color: rgb(89, 100, 224, 0.1);
         color: $violet;
+    }
+    @media (min-width: $screen-large) {
         &:hover {
-            background-color: rgb(89, 100, 224, 0.35);
+            background-color: $light-violet;
+        }
+        &.secondary {
+            background-color: rgb(89, 100, 224, 0.1);
+            color: $violet;
+            &:hover {
+                background-color: rgb(89, 100, 224, 0.35);
+            }
         }
     }
 }
